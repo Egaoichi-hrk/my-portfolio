@@ -70,7 +70,7 @@ export default function Home() {
         <li>・8月 HTML・CSS で静的サイト制作</li>
         <li>・10月 統計検定2級 合格</li>
         <li>・11月 FlaskでAPI開発</li>
-        <li>・1月 応用情報の勉強開始</li>
+        <li>・1月 応用情報技術者試験の勉強開始</li>
         <li>・2〜6月 新歓委員会 会計担当</li>
         <li>・3月 サークルの追い出しコンパ用の動画制作を一人で担当</li>
       </ul>
@@ -87,12 +87,12 @@ export default function Home() {
 
     <FadeIn delay={100}>
       <ul className="space-y-2 text-sm md:text-base">
-        <li>・4月 応用情報受験・就活開始</li>
+        <li>・4月 応用情報技術者試験の受験・就活開始</li>
         <li>・5月 React / Next.js / Tailwind に衝撃</li>
         <li>・6月 Cursor + Supabase によるAI駆動開発</li>
-        <li>・8月 2days インターンシップで2社参加</li>
+        <li>・8月 2days インターンシップで2社参加 統計データ分析コンペティション（総務省）に参加</li>
         <li>・9月 5days インターンシップ（スクラム開発）</li>
-        <li>・10月 応用情報再受験・Hackathonの参加・TOEIC/G検定学習開始</li>
+        <li>・10月 応用情報技術者試験の再受験・Hackathonの参加・TOEIC/G検定学習開始</li>
         <li>・12月 TOEIC 受験・研究室配属・ベイズ統計の学習開始</li>
       </ul>
     </FadeIn>
@@ -101,8 +101,9 @@ export default function Home() {
 </Section>
 
       <Section id="tech-stack" title="Skills">
+         <FadeIn>
         <div className="flex flex-col gap-10">
-
+         
           {/* Tech Stack */}
           <div>
             <div className="flex flex-wrap justify-center gap-4">
@@ -128,6 +129,8 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </FadeIn>
+        <FadeIn>
          {/* Certifications */}
           <div>
             <h3 className="text-2xl mt-10 font-semibold mb-4 neon-green text-center">
@@ -148,8 +151,10 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </FadeIn>
         </Section>
   <Section id="sns" title="SNS">
+     <FadeIn>
         <div className="flex justify-center gap-8 flex-wrap">
 
           <a
@@ -183,11 +188,13 @@ export default function Home() {
           </a>
 
         </div>
+      </FadeIn>
       </Section>
 
 
       {/* Services Section */}
       <Section id="services" title="My Services">
+        <FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="p-6 border border-green-400 rounded neon-border bg-black/30">
             <h3 className="text-xl font-bold mb-4 neon-green">Service1</h3>
@@ -208,11 +215,14 @@ export default function Home() {
             </p>
           </div>
         </div>
+        </FadeIn>
       </Section>
 
       {/* Contact Section */}
       <Section id="contact" title="Contact">
+        <FadeIn>
         <ContactForm />
+        </FadeIn>
       </Section>
     </main>
   );
