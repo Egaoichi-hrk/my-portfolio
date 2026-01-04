@@ -10,7 +10,7 @@ export default function Section({ id, title, children }: SectionProps) {
   return (
    <section
       id={id}
-      className="min-h-screen py-5 md:py-8 px-4 md:px-8 flex flex-col items-center justify-center relative"
+      className=" min-h-[50vh] py-5 md:py-5 px-4 md:px-8 flex flex-col items-center justify-center relative"
     >
 
       <div className="max-w-6xl mx-auto">

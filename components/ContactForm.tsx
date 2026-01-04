@@ -9,12 +9,40 @@ export default function ContactForm() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // ここにフォーム送信処理を追加
-    console.log("Form submitted:", formData);
-    alert("お問い合わせありがとうございます！");
-    setFormData({ name: "", email: "", message: "" });
+    if (loading) return;
+
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(
+          data.error ??
+            "送信できませんでした。時間をおいて再度お試しください。"
+        );
+        return;
+      }
+
+      alert("お問い合わせありがとうございます！");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      alert("通信エラーが発生しました。");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (
@@ -30,7 +58,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
         <label htmlFor="name" className="block text-green-400 mb-2">
-          お名前
+          Name
         </label>
         <input
           type="text"
@@ -42,9 +70,10 @@ export default function ContactForm() {
           className="w-full px-4 py-2 bg-black/50 border border-green-400 rounded focus:outline-none focus:neon-border text-white"
         />
       </div>
+
       <div>
         <label htmlFor="email" className="block text-green-400 mb-2">
-          メールアドレス
+          E-mail
         </label>
         <input
           type="email"
@@ -56,9 +85,10 @@ export default function ContactForm() {
           className="w-full px-4 py-2 bg-black/50 border border-green-400 rounded focus:outline-none focus:neon-border text-white"
         />
       </div>
+
       <div>
         <label htmlFor="message" className="block text-green-400 mb-2">
-          メッセージ
+          Message
         </label>
         <textarea
           id="message"
@@ -70,13 +100,20 @@ export default function ContactForm() {
           className="w-full px-4 py-2 bg-black/50 border border-green-400 rounded focus:outline-none focus:neon-border text-white resize-none"
         />
       </div>
+
       <button
         type="submit"
-        className="w-full py-3 px-6 bg-green-400 text-black font-bold rounded hover:bg-green-300 transition-colors neon-border"
+        disabled={loading}
+        className={`w-full py-3 px-6 font-bold rounded transition-colors neon-border
+          ${
+            loading
+              ? "bg-gray-500 cursor-not-allowed text-black"
+              : "bg-green-400 hover:bg-green-300 text-black"
+          }
+        `}
       >
-        送信
+        {loading ? "送信中..." : "送信"}
       </button>
     </form>
   );
 }
-
