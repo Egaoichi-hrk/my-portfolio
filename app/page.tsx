@@ -4,6 +4,7 @@ import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
 import { SiX, SiGithub, SiInstagram } from "react-icons/si";
 import FadeIn from "@/components/FadeIn";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -196,24 +197,34 @@ export default function Home() {
       <Section id="services" title="My Services">
         <FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="p-6 border border-green-400 rounded neon-border bg-black/30">
-            <h3 className="text-xl font-bold mb-4 neon-green">Service1</h3>
+          <Link
+            href="https://knowmehomepage.vercel.app/"
+            className="block p-6 border border-green-400 rounded neon-border bg-black/30 hover:scale-105 transition"
+          >
+            <h3 className="text-xl font-bold mb-4 neon-green">Know Me !</h3>
             <p className="text-gray-300">
-              Coming Soon...
+              オンライン上で自己紹介カードの共有
             </p>
-          </div>
-          <div className="p-6 border border-green-400 rounded neon-border bg-black/30">
+          </Link>
+           <Link
+            href="/service2"
+            className="block p-6 border border-green-400 rounded neon-border bg-black/30 hover:scale-105 transition"
+          >
             <h3 className="text-xl font-bold mb-4 neon-green">Service2</h3>
             <p className="text-gray-300">
               Coming Soon...
             </p>
-          </div>
-          <div className="p-6 border border-green-400 rounded neon-border bg-black/30">
+          </Link>
+           <Link
+            href="/service3"
+            className="block p-6 border border-green-400 rounded neon-border bg-black/30 hover:scale-105 transition"
+          >
             <h3 className="text-xl font-bold mb-4 neon-green">Service3</h3>
             <p className="text-gray-300">
-             Coming Soon...
+              Coming Soon...
             </p>
-          </div>
+          </Link>
+          
         </div>
         </FadeIn>
       </Section>
