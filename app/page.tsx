@@ -37,13 +37,13 @@ export default function Home() {
         </div>
       </Section>
 
-   <Section id="career" title="Career">
+   <Section id="career" title="University life">
   <div className="space-y-10 text-gray-300">
 
     {/* 1年生 */}
     <FadeIn>
       <h3 className="text-2xl font-bold text-center tracking-widest">
-        ― 1年生 ―
+         1年生 
       </h3>
     </FadeIn>
 
@@ -60,7 +60,7 @@ export default function Home() {
     {/* 2年生 */}
     <FadeIn>
       <h3 className="text-2xl font-bold text-center tracking-widest">
-        ― 2年生 ―
+         2年生 
       </h3>
     </FadeIn>
 
@@ -82,7 +82,7 @@ export default function Home() {
     {/* 3年生 */}
     <FadeIn>
       <h3 className="text-2xl font-bold  text-center tracking-widest">
-        ― 3年生 ―
+         3年生 
       </h3>
     </FadeIn>
 
@@ -95,6 +95,7 @@ export default function Home() {
         <li>・9月 5days インターンシップ（スクラム開発）</li>
         <li>・10月 応用情報技術者試験の再受験・Hackathonの参加・TOEIC/G検定学習開始</li>
         <li>・12月 TOEIC 受験・研究室配属・ベイズ統計の学習開始</li>
+        <li>・2月 自作LLM</li>
       </ul>
     </FadeIn>
 
