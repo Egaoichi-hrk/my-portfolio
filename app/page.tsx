@@ -73,7 +73,7 @@ export default function Home() {
         <li>・11月 FlaskでAPI開発</li>
         <li>・1月 応用情報技術者試験の勉強開始</li>
         <li>・2〜6月 新歓委員会 会計担当</li>
-        <li>・3月 サークルで追い出しコンパ用に向けての動画制作を頼まれ作成</li>
+        <li>・3月 サークルの追い出しコンパ用の動画制作を担当</li>
       </ul>
     </FadeIn>
 
@@ -89,13 +89,16 @@ export default function Home() {
     <FadeIn delay={100}>
       <ul className="space-y-2 text-sm md:text-base">
         <li>・4月 応用情報技術者試験の受験・就活開始</li>
-        <li>・5月 React / Next.js / Tailwind に衝撃</li>
+        <li>・5月 React / Next.js / Tailwind を触る</li>
         <li>・6月 Cursor + Supabase によるAI駆動開発</li>
         <li>・8月 2days インターンシップで2社参加 統計データ分析コンペティション（総務省）に参加</li>
         <li>・9月 5days インターンシップ（スクラム開発）</li>
         <li>・10月 応用情報技術者試験の再受験・Hackathonの参加・TOEIC/G検定学習開始</li>
-        <li>・12月 TOEIC 受験・研究室配属・ベイズ統計の学習開始</li>
+        <li>・12月 TOEIC 受験・研究室配属・ベイズ統計を学習</li>
         <li>・2月 自作LLM</li>
+        <li>・3月 TOIEC2回目</li>
+        <li>・4月 TOIEC3回目 GCI講座&DL講座開始 ollamaやLangChainに触れる</li>
+        <li>・5月 研究テーマプロポーザル Atcoder参加開始（Pythonで参加） djangoに触れる</li>
       </ul>
     </FadeIn>
 
@@ -142,7 +145,7 @@ export default function Home() {
               {[
                 "基本情報技術者",
                 "統計検定2級",
-                "TOEIC",
+                "TOEIC 635点",
               ].map((cert) => (
                 <div
                   key={cert}
