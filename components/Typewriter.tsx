@@ -54,7 +54,7 @@ export default function Typewriter({
   }, [index, isDeleting, text, speed, deleteSpeed, delay]);
 
   return (
-    <span className="neon-green text-4xl md:text-6xl font-mono">
+    <span className="text-white font-display font-semibold tracking-[0.08em] text-5xl md:text-7xl">
       {displayedText}
       <span className="animate-pulse">|</span>
     </span>

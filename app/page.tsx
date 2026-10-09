@@ -1,26 +1,36 @@
 import Typewriter from "@/components/Typewriter";
 import Section from "@/components/Section";
-import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
 import { SiX, SiGithub, SiInstagram } from "react-icons/si";
 import FadeIn from "@/components/FadeIn";
+import ScrollIndicator from "@/components/ScrollIndicator";
 import Link from "next/link";
 
+// コンテンツ一覧（各ページへのリンク）
+const contents = [
+  { href: "/university-life", title: "University life", description: "大学生活の歩み" },
+  { href: "/skills", title: "Skills", description: "技術スタック・資格" },
+  { href: "/services", title: "Services", description: "制作したサービス" },
+  { href: "/achievements", title: "Achievements", description: "実績" },
+  { href: "/contact", title: "Contact", description: "お問い合わせ" },
+];
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Welcome Section */}
-      <section className="min-h-screen flex items-center justify-center px-4">
+      <section className="relative min-h-screen flex items-center justify-center px-4">
         <div className="text-center">
           <Typewriter text="Welcome to my portfolio!" />
         </div>
+        <ScrollIndicator href="#profile" />
       </section>
 
    {/* Profile Section */}
-      <Section id="profile" title="Profile">
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          <div className="w-48 h-48 md:w-64 md:h-64 relative rounded-full overflow-hidden neon-border border-4 flex items-center justify-center bg-gray-800">
+      <div className="bg-white py-16 md:py-24">
+      <Section id="profile" title="Profile" light>
+        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-12">
+          <div className="w-48 h-48 md:w-64 md:h-64 relative rounded-full overflow-hidden flex items-center justify-center bg-gray-800">
             <Image
               src="/a_8bscNw.jpg"
               alt="プロフィール画像"
@@ -30,134 +40,38 @@ export default function Home() {
             />
           </div>
           <div className="flex-1 text-center md:text-left">
-            <p className="text-lg text-gray-300">
+            <p className="text-lg text-black">
              My name is Sakamto Haruki . I am a university student studying data science.I am studying statistics, AI, and information technology.I also like creative things—for example, making math problems, building websites, playing with LEGO, and so on.
+             <br />
+             I am currently conducting research in the field of Human-Computer Interaction (HCI). I am developing a system that enables humans and AI to divide roles at the level of cognitive activities.
             </p>
           </div>
         </div>
       </Section>
+      </div>
 
-   <Section id="career" title="University life">
-  <div className="space-y-10 text-gray-300">
-
-    {/* 1年生 */}
-    <FadeIn>
-      <h3 className="text-2xl font-bold text-center tracking-widest">
-         1年生 
-      </h3>
-    </FadeIn>
-
-    <FadeIn delay={100}>
-      <ul className="space-y-2 text-sm md:text-base">
-        <li>・サークルに5個入る</li>
-        <li>・線形代数、微積分を学ぶ</li>
-        <li>・基本情報技術者の勉強開始</li>
-      </ul>
-    </FadeIn>
-
-    <hr className="border-green-400/20" />
-
-    {/* 2年生 */}
-    <FadeIn>
-      <h3 className="text-2xl font-bold text-center tracking-widest">
-         2年生 
-      </h3>
-    </FadeIn>
-
-    <FadeIn delay={100}>
-      <ul className="space-y-2 text-sm md:text-base">
-        <li>・5月 基本情報技術者試験 合格</li>
-        <li>・7月 Python / Streamlit に触れる</li>
-        <li>・8月 HTML・CSS で静的サイト制作</li>
-        <li>・10月 統計検定2級 合格</li>
-        <li>・11月 FlaskでAPI開発</li>
-        <li>・1月 応用情報技術者試験の勉強開始</li>
-        <li>・2〜6月 新歓委員会 会計担当</li>
-        <li>・3月 サークルの追い出しコンパ用の動画制作を担当</li>
-      </ul>
-    </FadeIn>
-
-    <hr className="border-green-400/20" />
-
-    {/* 3年生 */}
-    <FadeIn>
-      <h3 className="text-2xl font-bold  text-center tracking-widest">
-         3年生 
-      </h3>
-    </FadeIn>
-
-    <FadeIn delay={100}>
-      <ul className="space-y-2 text-sm md:text-base">
-        <li>・4月 応用情報技術者試験の受験・就活開始</li>
-        <li>・5月 React / Next.js / Tailwind を触る</li>
-        <li>・6月 Cursor + Supabase によるAI駆動開発</li>
-        <li>・8月 2days インターンシップで2社参加 統計データ分析コンペティション（総務省）に参加</li>
-        <li>・9月 5days インターンシップ（スクラム開発）</li>
-        <li>・10月 応用情報技術者試験の再受験・Hackathonの参加・TOEIC/G検定学習開始</li>
-        <li>・12月 TOEIC 受験・研究室配属・ベイズ統計を学習</li>
-        <li>・2月 自作LLM</li>
-        <li>・3月 TOIEC2回目</li>
-        <li>・4月 TOIEC3回目 GCI講座&DL講座開始 ollamaやLangChainに触れる</li>
-        <li>・5月 研究テーマプロポーザル Atcoder参加開始（Pythonで参加） djangoに触れる</li>
-      </ul>
-    </FadeIn>
-
-  </div>
-</Section>
-
-      <Section id="tech-stack" title="Skills">
-         <FadeIn>
-        <div className="flex flex-col gap-10">
-         
-          {/* Tech Stack */}
-          <div>
-            <div className="flex flex-wrap justify-center gap-4">
-              {[
-                "Next.js",
-                "React",
-                "Python",
-                "Tailwind CSS",
-                "HTML",
-                "CSS",
-                "Flask",
-                "FastAPI",
-                "Supabase",
-                "Cursor",
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-4 py-2 border border-cyan-400 rounded-full text-cyan-300 bg-black/60 backdrop-blur-sm hover:shadow-[0_0_12px_rgba(34,211,238,0.8)] transition"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
+      {/* Contents Section */}
+      <div className="bg-white py-16 md:py-24">
+      <Section id="contents" title="Contents" light>
+        <FadeIn>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {contents.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="block p-6 border border-black rounded bg-white hover:bg-black hover:text-white transition group"
+            >
+              <h3 className="font-display text-2xl font-semibold tracking-[0.08em] mb-2">
+                {item.title}
+              </h3>
+              <p className="text-gray-600 group-hover:text-gray-300 transition">{item.description}</p>
+            </Link>
+          ))}
         </div>
         </FadeIn>
-        <FadeIn>
-         {/* Certifications */}
-          <div>
-            <h3 className="text-2xl mt-10 font-semibold mb-4 neon-green text-center">
-              
-            </h3>
-            <div className="flex flex-wrap justify-center gap-6">
-              {[
-                "基本情報技術者",
-                "統計検定2級",
-                "TOEIC 635点",
-              ].map((cert) => (
-                <div
-                  key={cert}
-                  className="px-6 py-4 border border-purple-400 rounded-lg bg-black/60 text-purple-300 text-center hover:shadow-[0_0_14px_rgba(168,85,247,0.9)] transition"
-                >
-                  {cert}
-                </div>
-              ))}
-            </div>
-          </div>
-        </FadeIn>
-        </Section>
+      </Section>
+      </div>
+
   <Section id="sns" title="SNS">
      <FadeIn>
         <div className="flex justify-center gap-8 flex-wrap">
@@ -166,7 +80,7 @@ export default function Home() {
             href="https://x.com/peFtOYXB5txqDEK"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-4 border-2 border-green-400 rounded-full neon-border hover:bg-green-400/10 transition"
+            className="p-4 border-2 border-white rounded-full neon-border hover:bg-white/10 transition"
             aria-label="X"
           >
             <SiX size={32} />
@@ -176,7 +90,7 @@ export default function Home() {
             href="https://github.com/Egaoichi-hrk"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-4 border-2 border-green-400 rounded-full neon-border hover:bg-green-400/10 transition"
+            className="p-4 border-2 border-white rounded-full neon-border hover:bg-white/10 transition"
             aria-label="GitHub"
           >
             <SiGithub size={32} />
@@ -186,7 +100,7 @@ export default function Home() {
             href="https://www.instagram.com/o0_route_0o/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-4 border-2 border-green-400 rounded-full neon-border hover:bg-green-400/10 transition"
+            className="p-4 border-2 border-white rounded-full neon-border hover:bg-white/10 transition"
             aria-label="Instagram"
           >
             <SiInstagram size={32} />
@@ -195,51 +109,6 @@ export default function Home() {
         </div>
       </FadeIn>
       </Section>
-
-
-      {/* Services Section */}
-      <Section id="services" title="My Services">
-        <FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Link
-            href="https://knowmehomepage.vercel.app/"
-            className="block p-6 border border-green-400 rounded neon-border bg-black/30 hover:scale-105 transition"
-          >
-            <h3 className="text-xl font-bold mb-4 neon-green">Know Me !</h3>
-            <p className="text-gray-300">
-              オンライン上で自己紹介カードの共有
-            </p>
-          </Link>
-           <Link
-            href="/service2"
-            className="block p-6 border border-green-400 rounded neon-border bg-black/30 hover:scale-105 transition"
-          >
-            <h3 className="text-xl font-bold mb-4 neon-green">Service2</h3>
-            <p className="text-gray-300">
-              Coming Soon...
-            </p>
-          </Link>
-           <Link
-            href="/service3"
-            className="block p-6 border border-green-400 rounded neon-border bg-black/30 hover:scale-105 transition"
-          >
-            <h3 className="text-xl font-bold mb-4 neon-green">Service3</h3>
-            <p className="text-gray-300">
-              Coming Soon...
-            </p>
-          </Link>
-          
-        </div>
-        </FadeIn>
-      </Section>
-
-      {/* Contact Section */}
-      <Section id="contact" title="Contact">
-        <FadeIn>
-        <ContactForm />
-        </FadeIn>
-      </Section>
     </main>
   );
 }
-

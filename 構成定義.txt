@@ -24,3 +24,11 @@ SNS
 ・デザイン
 
 背景は黒ベースで各セグメントに緑色のネオン
+
+
+・改善
+
+トップページには人物紹介とSNS一覧とコンテンツ一覧だけにする
+
+他は別ページを作る（UniversityLife、Skills、Contact、Services）
+

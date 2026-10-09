@@ -57,7 +57,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
-        <label htmlFor="name" className="block text-green-400 mb-2">
+        <label htmlFor="name" className="block text-white mb-2">
           Name
         </label>
         <input
@@ -67,12 +67,12 @@ export default function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 bg-black/50 border border-green-400 rounded focus:outline-none focus:neon-border text-white"
+          className="w-full px-4 py-2 bg-black/50 border border-white rounded focus:outline-none focus:neon-border text-white"
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-green-400 mb-2">
+        <label htmlFor="email" className="block text-white mb-2">
           E-mail
         </label>
         <input
@@ -82,12 +82,12 @@ export default function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 bg-black/50 border border-green-400 rounded focus:outline-none focus:neon-border text-white"
+          className="w-full px-4 py-2 bg-black/50 border border-white rounded focus:outline-none focus:neon-border text-white"
         />
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-green-400 mb-2">
+        <label htmlFor="message" className="block text-white mb-2">
           Message
         </label>
         <textarea
@@ -97,7 +97,7 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           rows={6}
-          className="w-full px-4 py-2 bg-black/50 border border-green-400 rounded focus:outline-none focus:neon-border text-white resize-none"
+          className="w-full px-4 py-2 bg-black/50 border border-white rounded focus:outline-none focus:neon-border text-white resize-none"
         />
       </div>
 
